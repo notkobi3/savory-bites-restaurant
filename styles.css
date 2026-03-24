@@ -1817,7 +1817,7 @@ footer {
         color: white;
     }
     
-    /* TV Zones - Dark Mode */
+    /* TV Zones - Dark Mode - CRITICAL FIX */
     .tv-zones-section {
         background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
     }
@@ -1829,6 +1829,49 @@ footer {
     
     .tv-zone:hover {
         border-color: rgba(255, 182, 18, 0.4);
+    }
+    
+    /* TV Zone Text - Dark Mode - CRITICAL FIX */
+    .zone-header h3 {
+        color: #FFB612 !important;
+    }
+    
+    .zone-capacity {
+        color: #FFB612 !important;
+        background: rgba(255, 182, 18, 0.2) !important;
+    }
+    
+    .tv-size, .sound-system {
+        color: #FFB612 !important;
+    }
+    
+    .zone-amenities li {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    .available-tonight {
+        color: #27ae60 !important;
+    }
+    
+    .limited-seating {
+        color: #f39c12 !important;
+    }
+    
+    .plenty-seating {
+        color: #3498db !important;
+    }
+    
+    .vip-status {
+        color: #9b59b6 !important;
+    }
+    
+    .zone-legend h4 {
+        color: #FFB612 !important;
+    }
+    
+    .legend-item {
+        color: #FFB612 !important;
+        background: rgba(255, 182, 18, 0.2) !important;
     }
     
     /* Events - Dark Mode */
@@ -1907,10 +1950,6 @@ footer {
     }
     
     /* Text Colors - Dark Mode */
-    .zone-amenities li {
-        color: rgba(255, 255, 255, 0.8);
-    }
-    
     .menu-item h4 {
         color: var(--ecu-gold);
     }

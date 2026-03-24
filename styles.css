@@ -698,6 +698,9 @@ section:nth-child(even) {
     top: 2rem;
     height: fit-content;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .ecu-section {
@@ -707,6 +710,17 @@ section:nth-child(even) {
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     border: 2px solid var(--ecu-gold);
     animation: glow 3s ease-in-out infinite;
+}
+
+/* General Game Section */
+.ecu-section:first-child {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border: 2px solid var(--secondary-color);
+}
+
+.ecu-section:first-child h3 {
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 @keyframes glow {
@@ -771,30 +785,6 @@ section:nth-child(even) {
 .ecu-reserve:hover {
     background: #FFD700;
     transform: translateY(-2px);
-}
-
-.ecu-specials {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.ecu-specials h4 {
-    color: var(--ecu-gold);
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
-.ecu-specials ul {
-    list-style: none;
-    padding: 0;
-}
-
-.ecu-specials li {
-    color: white;
-    padding: 0.3rem 0;
-    font-size: 0.9rem;
-    text-align: center;
 }
 
 /* Game Day Widget - General Sports Theme */

@@ -3,70 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savory Bites - Restaurant & Catering</title>
+    <title>Kickback J's - ECU Pirates Sports Bar | Greenville, NC</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="hero-header">
         <nav class="navbar">
             <div class="nav-container">
-                <h1 class="logo">🍽️ Savory Bites</h1>
+                <h1 class="logo">�‍☠️ Kickback J's</h1>
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#menu" class="nav-link">Game Day Menu</a></li>
                     <li><a href="#tv-zones" class="nav-link">TV Zones</a></li>
-                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><a href="#events" class="nav-link">ECU Events</a></li>
+                    <li><a href="#preorder" class="nav-link">Pre-Order</a></li>
                     <li><a href="#catering" class="nav-link">Catering</a></li>
-                    <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#careers" class="nav-link">Careers</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
                 </ul>
                 <button class="hamburger">☰</button>
             </div>
         </nav>
         <div class="hero-content">
-            <h2>Experience Culinary Excellence</h2>
-            <p>Fresh ingredients, bold flavors, unforgettable experiences</p>
-            <button class="cta-button">Reserve Your Table</button>
+            <div class="ecu-pride">
+                <div class="pirates-flag">🏴‍☠️</div>
+                <h2>ECU PIRATES HEADQUARTERS</h2>
+                <p>Your Home for Game Day - Just Steps from Campus!</p>
+                <div class="location-badge">
+                    <span>📍 0.5 Miles from Dowdy-Ficklen Stadium</span>
+                </div>
+            </div>
             
-            <!-- Live Availability Widget -->
+            <!-- Live Game Day Widget -->
+            <div class="game-day-widget">
+                <h3>🏈 Next Game Day</h3>
+                <div class="game-info">
+                    <div class="teams">
+                        <span class="team ecu">ECU Pirates</span>
+                        <span class="vs">VS</span>
+                        <span class="team opponent">UNC Tar Heels</span>
+                    </div>
+                    <div class="game-time">
+                        <span>📅 Saturday, Sep 14</span>
+                        <span>⏰ 7:30 PM</span>
+                    </div>
+                    <div class="game-status">
+                        <span class="status-badge">RESERVATIONS OPEN</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Availability Widget -->
             <div class="availability-widget">
-                <h4>🕐 Real-time Table Availability</h4>
-                <div class="availability-grid">
-                    <div class="time-slot" data-time="11:00">
-                        <span class="time">11:00 AM</span>
+                <h3>📺 Real-Time Availability</h3>
+                <div class="time-slots">
+                    <div class="time-slot">
+                        <span class="time">5:00 PM</span>
                         <div class="availability-bar">
-                            <div class="available" style="width: 80%"></div>
+                            <div class="available" style="width: 20%"></div>
                         </div>
-                        <span class="status">4 tables available</span>
+                        <span class="wait-time">45 min wait</span>
                     </div>
-                    <div class="time-slot" data-time="12:30">
-                        <span class="time">12:30 PM</span>
-                        <div class="availability-bar">
-                            <div class="available" style="width: 30%"></div>
-                        </div>
-                        <span class="status">1 table available</span>
-                    </div>
-                    <div class="time-slot" data-time="2:00">
-                        <span class="time">2:00 PM</span>
-                        <div class="availability-bar">
-                            <div class="available" style="width: 60%"></div>
-                        </div>
-                        <span class="status">3 tables available</span>
-                    </div>
-                    <div class="time-slot" data-time="6:00">
+                    <div class="time-slot">
                         <span class="time">6:00 PM</span>
                         <div class="availability-bar">
                             <div class="available" style="width: 10%"></div>
                         </div>
-                        <span class="status">Almost full</span>
+                        <span class="wait-time">90+ min wait</span>
                     </div>
-                    <div class="time-slot" data-time="7:30">
-                        <span class="time">7:30 PM</span>
+                    <div class="time-slot">
+                        <span class="time">7:00 PM</span>
                         <div class="availability-bar">
                             <div class="available" style="width: 5%"></div>
                         </div>
-                        <span class="status">1 table left</span>
+                        <span class="wait-time">FULL</span>
                     </div>
+                    <div class="time-slot">
+                        <span class="time">8:00 PM</span>
                     <div class="time-slot" data-time="9:00">
                         <span class="time">9:00 PM</span>
                         <div class="availability-bar">
@@ -110,25 +122,31 @@
         
         <section id="menu" class="menu-section">
             <div class="container">
-                <h2>Our Menu</h2>
+                <div class="ecu-menu-header">
+                    <h2>🏴‍☠️ Game Day Menu</h2>
+                    <p>Fuel Your Pirates Pride - ECU Game Day Specials!</p>
+                </div>
                 <div class="menu-categories">
                     <div class="menu-category">
-                        <h3>🍕 Game Day Appetizers</h3>
+                        <h3>🍕 Pirate Appetizers</h3>
                         <div class="menu-items">
                             <div class="menu-item">
-                                <h4>Loaded Nachos</h4>
+                                <h4>Pirates Loaded Nachos</h4>
                                 <p>Chips, cheese, jalapeños, sour cream, and your choice of protein</p>
                                 <span class="price">$14.99</span>
+                                <button class="add-to-cart" data-item="Pirates Loaded Nachos" data-price="14.99">Add to Cart</button>
                             </div>
                             <div class="menu-item">
-                                <h4>Buffalo Wings</h4>
+                                <h4>Dowdy-Ficklen Wings</h4>
                                 <p>Traditional or boneless, served with celery and blue cheese</p>
                                 <span class="price">$12.99</span>
+                                <button class="add-to-cart" data-item="Dowdy-Ficklen Wings" data-price="12.99">Add to Cart</button>
                             </div>
                             <div class="menu-item">
-                                <h4>Pretzel Bites</h4>
+                                <h4>Victory Pretzels</h4>
                                 <p>Warm pretzels with beer cheese dip and mustard</p>
                                 <span class="price">$9.99</span>
+                                <button class="add-to-cart" data-item="Victory Pretzels" data-price="9.99">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -136,19 +154,22 @@
                         <h3>🍺 Main Courses</h3>
                         <div class="menu-items">
                             <div class="menu-item">
-                                <h4>Sports Burger</h4>
+                                <h4>Pirate Burger</h4>
                                 <p>Half-pound burger with fries, choose your toppings</p>
                                 <span class="price">$16.99</span>
+                                <button class="add-to-cart" data-item="Pirate Burger" data-price="16.99">Add to Cart</button>
                             </div>
                             <div class="menu-item">
-                                <h4>Philly Cheesesteak</h4>
+                                <h4>ECU Cheesesteak</h4>
                                 <p>Steak, peppers, onions, provolone on hoagie roll</p>
                                 <span class="price">$14.99</span>
+                                <button class="add-to-cart" data-item="ECU Cheesesteak" data-price="14.99">Add to Cart</button>
                             </div>
                             <div class="menu-item">
-                                <h4>Chicken Tenders</h4>
+                                <h4>Buccaneer Tenders</h4>
                                 <p>6 pieces with fries and choice of dipping sauce</p>
                                 <span class="price">$13.99</span>
+                                <button class="add-to-cart" data-item="Buccaneer Tenders" data-price="13.99">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -156,20 +177,97 @@
                         <h3>🍻 Drinks & Desserts</h3>
                         <div class="menu-items">
                             <div class="menu-item">
-                                <h4>Craft Beer Selection</h4>
+                                <h4>Pirates Brew</h4>
                                 <p>Rotating local and craft beers on tap</p>
                                 <span class="price">$5-8</span>
+                                <button class="add-to-cart" data-item="Pirates Brew" data-price="6.50">Add to Cart</button>
                             </div>
                             <div class="menu-item">
                                 <h4>Game Day Cocktails</h4>
                                 <p>Specialty cocktails for game day celebrations</p>
                                 <span class="price">$10-12</span>
+                                <button class="add-to-cart" data-item="Game Day Cocktails" data-price="11.00">Add to Cart</button>
                             </div>
                             <div class="menu-item">
-                                <h4>Chocolate Brownie</h4>
+                                <h4>Pirate Brownie</h4>
                                 <p>Warm brownie with ice cream and chocolate sauce</p>
                                 <span class="price">$6.99</span>
+                                <button class="add-to-cart" data-item="Pirate Brownie" data-price="6.99">Add to Cart</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pre-Order Section -->
+        <section id="preorder" class="preorder-section">
+            <div class="container">
+                <div class="preorder-header">
+                    <h2>🛒 Skip the Lines - Pre-Order Game Day!</h2>
+                    <p>Order ahead and pickup when you arrive. Perfect for game day!</p>
+                </div>
+                
+                <div class="preorder-layout">
+                    <div class="menu-selection">
+                        <h3>Select Your Items</h3>
+                        <div class="preorder-menu">
+                            <div class="preorder-item">
+                                <div class="item-info">
+                                    <h4>Pirates Game Day Package</h4>
+                                    <p>4 burgers, 2 appetizers, 4 drinks - feeds 4 fans</p>
+                                    <span class="price">$59.99</span>
+                                </div>
+                                <div class="item-controls">
+                                    <button class="decrease-qty">-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="increase-qty">+</button>
+                                </div>
+                            </div>
+                            <div class="preorder-item">
+                                <div class="item-info">
+                                    <h4>Tailgate Special</h4>
+                                    <p>Wings, nachos, and drinks for 2-3 people</p>
+                                    <span class="price">$39.99</span>
+                                </div>
+                                <div class="item-controls">
+                                    <button class="decrease-qty">-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="increase-qty">+</button>
+                                </div>
+                            </div>
+                            <div class="preorder-item">
+                                <div class="item-info">
+                                    <h4>Victory Platter</h4>
+                                    <p>Loaded nachos, pretzels, and wings for sharing</p>
+                                    <span class="price">$24.99</span>
+                                </div>
+                                <div class="item-controls">
+                                    <button class="decrease-qty">-</button>
+                                    <span class="quantity">0</span>
+                                    <button class="increase-qty">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-sidebar">
+                        <div class="cart-header">
+                            <h3>🛒 Your Cart</h3>
+                            <span class="cart-count">0 items</span>
+                        </div>
+                        <div class="cart-items">
+                            <div class="empty-cart">
+                                <p>Your cart is empty</p>
+                                <p>Add items to get started!</p>
+                            </div>
+                        </div>
+                        <div class="cart-footer">
+                            <div class="cart-total">
+                                <span>Total:</span>
+                                <span class="total-amount">$0.00</span>
+                            </div>
+                            <button class="checkout-btn" disabled>Proceed to Checkout</button>
                         </div>
                     </div>
                 </div>

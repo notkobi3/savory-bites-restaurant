@@ -816,31 +816,232 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Calendar Navigation
-    const monthNavButtons = document.querySelectorAll('.month-nav');
-    const currentMonthSpan = document.querySelector('.current-month');
+    // Cart System for Pre-Order
+    let cart = [];
     
-    monthNavButtons.forEach(button => {
+    // Add to Cart functionality for menu items
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Simple month navigation simulation
-            const months = ['January 2024', 'February 2024', 'March 2024', 'April 2024'];
-            let currentMonthIndex = months.indexOf(currentMonthSpan.textContent);
+            const item = this.dataset.item;
+            const price = parseFloat(this.dataset.price);
             
-            if (this.classList.contains('prev')) {
-                currentMonthIndex = (currentMonthIndex - 1 + months.length) % months.length;
-            } else {
-                currentMonthIndex = (currentMonthIndex + 1) % months.length;
-            }
+            addToCart({ name: item, price: price, quantity: 1 });
+            updateCartDisplay();
             
-            currentMonthSpan.textContent = months[currentMonthIndex];
-            
-            // Simulate loading new events
-            eventCards.forEach(card => {
-                card.style.opacity = '0.5';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                }, 300);
-            });
+            // Visual feedback
+            this.textContent = 'Added!';
+            this.style.background = '#27ae60';
+            setTimeout(() => {
+                this.textContent = 'Add to Cart';
+                this.style.background = '';
+            }, 1500);
         });
     });
+    
+    // Pre-Order quantity controls
+    const increaseButtons = document.querySelectorAll('.increase-qty');
+    const decreaseButtons = document.querySelectorAll('.decrease-qty');
+    
+    increaseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemElement = this.closest('.preorder-item');
+            const itemName = itemElement.querySelector('h4').textContent;
+            const itemPrice = parseFloat(itemElement.querySelector('.price').textContent.replace('$', ''));
+            const quantityElement = itemElement.querySelector('.quantity');
+            
+            let quantity = parseInt(quantityElement.textContent);
+            quantity++;
+            quantityElement.textContent = quantity;
+            
+            addToCart({ name: itemName, price: itemPrice, quantity: 1 });
+            updateCartDisplay();
+        });
+    });
+    
+    decreaseButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemElement = this.closest('.preorder-item');
+            const itemName = itemElement.querySelector('h4').textContent;
+            const quantityElement = itemElement.querySelector('.quantity');
+            
+            let quantity = parseInt(quantityElement.textContent);
+            if (quantity > 0) {
+                quantity--;
+                quantityElement.textContent = quantity;
+                
+                removeFromCart(itemName, 1);
+                updateCartDisplay();
+            }
+        });
+    });
+    
+    function addToCart(item) {
+        const existingItem = cart.find(cartItem => cartItem.name === item.name);
+        
+        if (existingItem) {
+            existingItem.quantity += item.quantity;
+        } else {
+            cart.push({
+                name: item.name,
+                price: item.price,
+                quantity: item.quantity
+            });
+        }
+    }
+    
+    function removeFromCart(itemName, quantity) {
+        const itemIndex = cart.findIndex(cartItem => cartItem.name === itemName);
+        
+        if (itemIndex !== -1) {
+            cart[itemIndex].quantity -= quantity;
+            
+            if (cart[itemIndex].quantity <= 0) {
+                cart.splice(itemIndex, 1);
+            }
+        }
+    }
+    
+    function updateCartDisplay() {
+        const cartItems = document.querySelector('.cart-items');
+        const cartCount = document.querySelector('.cart-count');
+        const totalAmount = document.querySelector('.total-amount');
+        const checkoutBtn = document.querySelector('.checkout-btn');
+        
+        if (cart.length === 0) {
+            cartItems.innerHTML = `
+                <div class="empty-cart">
+                    <p>Your cart is empty</p>
+                    <p>Add items to get started!</p>
+                </div>
+            `;
+            cartCount.textContent = '0 items';
+            totalAmount.textContent = '$0.00';
+            checkoutBtn.disabled = true;
+        } else {
+            let cartHTML = '';
+            let total = 0;
+            let itemCount = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                itemCount += item.quantity;
+                
+                cartHTML += `
+                    <div class="cart-item">
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
+                        </div>
+                        <div class="cart-item-total">
+                            <span>$${itemTotal.toFixed(2)}</span>
+                            <button class="remove-item" data-item="${item.name}">×</button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItems.innerHTML = cartHTML;
+            cartCount.textContent = `${itemCount} items`;
+            totalAmount.textContent = `$${total.toFixed(2)}`;
+            checkoutBtn.disabled = false;
+            
+            // Add remove item functionality
+            const removeButtons = document.querySelectorAll('.remove-item');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemName = this.dataset.item;
+                    const itemElement = document.querySelector(`.preorder-item h4:contains("${itemName}")`);
+                    
+                    if (itemElement) {
+                        const quantityElement = itemElement.closest('.preorder-item').querySelector('.quantity');
+                        quantityElement.textContent = '0';
+                    }
+                    
+                    removeFromCart(itemName, Infinity);
+                    updateCartDisplay();
+                });
+            });
+        }
+    }
+    
+    // Checkout functionality
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    checkoutBtn.addEventListener('click', function() {
+        if (cart.length > 0) {
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            const modal = document.createElement('div');
+            modal.className = 'checkout-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>🏴‍☠️ Pre-Order Confirmation</h3>
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <p><strong>Items:</strong> ${itemCount}</p>
+                        <p><strong>Total:</strong> $${total.toFixed(2)}</p>
+                        <div class="order-items">
+                            ${cart.map(item => `<p>• ${item.name} x ${item.quantity}</p>`).join('')}
+                        </div>
+                    </div>
+                    <form class="checkout-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone" required>
+                        <input type="date" placeholder="Pickup Date" required>
+                        <input type="time" placeholder="Pickup Time" required>
+                        <textarea placeholder="Special instructions..." rows="3"></textarea>
+                        <button type="submit">Complete Pre-Order</button>
+                    </form>
+                </div>
+            `;
+            
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2000;
+            `;
+            
+            document.body.appendChild(modal);
+            
+            const closeModal = modal.querySelector('.close-modal');
+            closeModal.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            });
+            
+            const form = modal.querySelector('.checkout-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert(`Pre-order confirmed! Total: $${total.toFixed(2)}. We'll send confirmation details to your email.`);
+                
+                // Clear cart
+                cart = [];
+                updateCartDisplay();
+                
+                // Reset quantities
+                document.querySelectorAll('.quantity').forEach(qty => qty.textContent = '0');
+                
+                document.body.removeChild(modal);
+            });
+        }
+    });
+    
+    // Initialize cart display
+    updateCartDisplay();
 });

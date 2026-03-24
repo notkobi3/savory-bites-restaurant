@@ -14,6 +14,8 @@
     --text-light: #7f8c8d;
     --bg-light: #f8f9fa;
     --bg-dark: #0d0d0d;
+    --bg-light-alt: #e8ecef; /* Softer light background */
+    --bg-medium: #f5f5f5; /* Medium gray for better contrast */
     --white: #ffffff;
     --shadow: 0 5px 15px rgba(0,0,0,0.1);
     --shadow-hover: 0 10px 25px rgba(0,0,0,0.15);
@@ -1932,6 +1934,372 @@ footer {
     .job-card,
     .benefit-item {
         padding: 1.5rem;
+    }
+}
+
+/* Light Mode Section Adjustments */
+@media (prefers-color-scheme: light) {
+    /* Hero Header - Light Mode */
+    .hero-header {
+        background: linear-gradient(135deg, var(--bg-light-alt) 0%, var(--bg-light) 100%);
+        color: var(--text-dark);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-header::before {
+        display: none;
+    }
+
+    /* Hero Layout with Sidebar */
+    .hero-layout {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+        flex: 1;
+        align-items: start;
+    }
+
+    /* Main Hero Content */
+    .hero-content {
+        z-index: 2;
+        position: relative;
+    }
+
+    /* Availability Widget - Light Mode */
+    .availability-widget {
+        background: var(--bg-light);
+        border: 2px solid var(--secondary-color);
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+    }
+
+    .availability-widget h3 {
+        color: var(--primary-color);
+    }
+
+    /* Time Slots - Light Mode */
+    .time-slot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--bg-light-alt);
+    }
+
+    .time-slot .time {
+        color: var(--text-dark);
+        font-weight: bold;
+    }
+
+    .time-slot .wait-time {
+        color: var(--text-light);
+    }
+
+    /* Reserve Button - Light Mode */
+    .reserve-now-btn {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #ff8c42 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .reserve-now-btn:hover {
+        background: linear-gradient(135deg, #ff8c42 0%, #ffa500 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+
+    /* ECU Sidebar - Light Mode */
+    .ecu-sidebar {
+        background: rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+        padding: 1rem;
+    }
+
+    .ecu-section {
+        background: linear-gradient(135deg, var(--ecu-purple) 0%, var(--ecu-gold) 100%);
+        border: 2px solid var(--ecu-gold);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .ecu-section:first-child {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        border: 2px solid var(--secondary-color);
+    }
+
+    .ecu-section h3 {
+        color: var(--white);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .ecu-section:first-child h3 {
+        color: var(--secondary-color);
+    }
+
+    .game-info .teams .team {
+        color: var(--white);
+        background: rgba(0, 0, 0, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .game-info .game-time span {
+        color: var(--text-dark);
+    }
+
+    .game-info .game-status .status-badge {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10B981;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .ecu-info .location-badge span {
+        color: var(--text-dark);
+        background: rgba(0, 0, 0, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .ecu-game h4 {
+        color: var(--text-dark);
+    }
+
+    .ecu-game p {
+        color: var(--text-light);
+    }
+
+    .ecu-reserve {
+        background: var(--secondary-color);
+        color: var(--white);
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: var(--transition);
+    }
+
+    .ecu-reserve:hover {
+        background: #ff8c42;
+        transform: translateY(-2px);
+    }
+
+    /* TV Zones - Light Mode */
+    .tv-zones-section {
+        background: linear-gradient(135deg, var(--bg-light-alt) 0%, var(--bg-light) 100%);
+    }
+
+    .tv-zone {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .tv-zone:hover {
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* TV Zone Text - Light Mode */
+    .zone-header h3 {
+        color: var(--primary-color);
+    }
+
+    .zone-capacity {
+        color: var(--primary-color);
+        background: rgba(255, 182, 18, 0.2);
+    }
+
+    .tv-size, .sound-system {
+        color: var(--primary-color);
+    }
+
+    .zone-amenities li {
+        color: var(--text-dark);
+    }
+
+    .available-tonight {
+        color: #27ae60;
+    }
+
+    .limited-seating {
+        color: #f39c12;
+    }
+
+    .plenty-seating {
+        color: #3498db;
+    }
+
+    .vip-status {
+        color: #9b59b6;
+    }
+
+    .zone-legend h4 {
+        color: var(--primary-color);
+    }
+
+    .legend-item {
+        color: var(--primary-color);
+        background: rgba(255, 182, 18, 0.2);
+    }
+
+    /* Events - Light Mode */
+    .events-section {
+        background: linear-gradient(135deg, var(--bg-light-alt) 0%, var(--bg-light) 100%);
+    }
+
+    .events-section h2 {
+        color: var(--primary-color);
+    }
+
+    .event-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .event-card h3 {
+        color: var(--text-dark);
+    }
+
+    .event-time {
+        color: var(--text-dark);
+    }
+
+    .event-description {
+        color: var(--text-light);
+    }
+
+    .promo-tag {
+        background: rgba(255, 107, 53, 0.2);
+        color: #ff6b35;
+        border: 1px solid rgba(255, 107, 53, 0.3);
+    }
+
+    .reservations-status {
+        color: var(--text-dark);
+    }
+
+    /* Event Date - Light Mode */
+    .event-date {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .event-date .day {
+        color: var(--text-dark);
+    }
+
+    .event-date .month {
+        color: var(--text-light);
+    }
+
+    /* Menu - Light Mode */
+    .menu-section {
+        background: linear-gradient(135deg, var(--bg-light-alt) 0%, var(--bg-light) 100%);
+    }
+
+    .menu-section h2 {
+        color: var(--primary-color);
+    }
+
+    .menu-category {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .menu-category h3 {
+        color: var(--primary-color);
+    }
+
+    .menu-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-item h4 {
+        color: var(--text-dark);
+    }
+
+    .menu-item p {
+        color: var(--text-light);
+    }
+
+    .item-price {
+        color: var(--primary-color);
+    }
+
+    /* Pre-Order - Light Mode */
+    .preorder-section {
+        background: linear-gradient(135deg, var(--bg-light-alt) 0%, var(--bg-light) 100%);
+    }
+
+    .preorder-section h2 {
+        color: var(--primary-color);
+    }
+
+    .preorder-item {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .item-info h4 {
+        color: var(--text-dark);
+    }
+
+    .item-info p {
+        color: var(--text-light);
+    }
+
+    .item-price {
+        color: var(--primary-color);
+    }
+
+    .cart-sidebar {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+    }
+
+    .cart-header h3 {
+        color: var(--text-dark);
+    }
+
+    .cart-count {
+        background: var(--primary-color);
+        color: var(--white);
+    }
+
+    .empty-cart p {
+        color: var(--text-light);
+    }
+
+    .cart-total {
+        color: var(--text-dark);
+    }
+
+    .total-amount {
+        color: var(--primary-color);
+    }
+
+    /* Catering - Light Mode */
+    .catering-section {
+        background: linear-gradient(135deg, var(--bg-light-alt) 0%, var(--bg-light) 100%);
     }
 }
 

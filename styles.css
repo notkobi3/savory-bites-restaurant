@@ -1860,6 +1860,123 @@ footer {
         color: white;
     }
     
+    /* Availability Widget - Dark Mode */
+    .availability-widget {
+        background: rgba(255, 255, 255, 0.08);
+        border: 2px solid rgba(255, 107, 53, 0.4);
+    }
+    
+    .availability-widget h3 {
+        color: #ff6b35 !important;
+    }
+    
+    .time-slot .time {
+        color: white !important;
+    }
+    
+    .time-slot .wait-time {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    /* Reserve Button - Better Color */
+    .reserve-now-btn {
+        background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%) !important;
+        color: white !important;
+        border: none !important;
+        padding: 1rem 2rem !important;
+        border-radius: 12px !important;
+        font-weight: bold !important;
+        font-size: 1.1rem !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+    }
+    
+    .reserve-now-btn:hover {
+        background: linear-gradient(135deg, #ff8c42 0%, #ffa500 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+    }
+    
+    /* ECU Sidebar - Dark Mode - CRITICAL FIX */
+    .ecu-sidebar {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        padding: 1rem;
+    }
+    
+    .ecu-section {
+        background: linear-gradient(135deg, rgba(255, 182, 18, 0.9) 0%, rgba(88, 44, 131, 0.9) 100%);
+        border: 2px solid rgba(255, 182, 18, 0.5);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    
+    .ecu-section:first-child {
+        background: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+        border: 2px solid rgba(255, 107, 53, 0.5);
+    }
+    
+    .ecu-section h3 {
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .ecu-section:first-child h3 {
+        color: #ff6b35 !important;
+    }
+    
+    .game-info .teams .team {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .game-info .game-time span {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    .game-info .game-status .status-badge {
+        background: rgba(16, 185, 129, 0.2);
+        color: #10B981;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    
+    .ecu-info .location-badge span {
+        color: white !important;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .ecu-game h4 {
+        color: white !important;
+    }
+    
+    .ecu-game p {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    .ecu-reserve {
+        background: #ff6b35 !important;
+        color: white !important;
+        border: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: var(--transition);
+    }
+    
+    .ecu-reserve:hover {
+        background: #ff8c42 !important;
+        transform: translateY(-2px);
+    }
+    
     /* TV Zones - Dark Mode - CRITICAL FIX */
     .tv-zones-section {
         background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
@@ -1867,11 +1984,11 @@ footer {
     
     .tv-zone {
         background: rgba(255, 255, 255, 0.05);
-        border: 2px solid rgba(255, 182, 18, 0.2);
+        border: 2px solid rgba(255, 255, 255, 0.2);
     }
     
     .tv-zone:hover {
-        border-color: rgba(255, 182, 18, 0.4);
+        border-color: rgba(255, 255, 255, 0.4);
     }
     
     /* TV Zone Text - Dark Mode - CRITICAL FIX */
@@ -1922,14 +2039,70 @@ footer {
         background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     }
     
+    .events-section h2 {
+        color: #FFB612 !important;
+    }
+    
+    .event-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .event-card h3 {
+        color: white !important;
+    }
+    
+    .event-time {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    .event-description {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    .promo-tag {
+        background: rgba(255, 107, 53, 0.2);
+        color: #ff6b35 !important;
+        border: 1px solid rgba(255, 107, 53, 0.3);
+    }
+    
+    .reservations-status {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
     /* Menu - Dark Mode */
     .menu-section {
         background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     }
     
+    .menu-section h2 {
+        color: #FFB612 !important;
+    }
+    
     .menu-category {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .menu-category h3 {
+        color: #FFB612 !important;
+    }
+    
+    .menu-item {
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-item h4 {
+        color: white !important;
+    }
+    
+    .menu-item p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    .item-price {
+        color: #ff6b35 !important;
     }
     
     /* Pre-Order - Dark Mode */
@@ -1937,45 +2110,129 @@ footer {
         background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     }
     
+    .preorder-section h2 {
+        color: #FFB612 !important;
+    }
+    
     .preorder-item {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .item-info h4 {
+        color: white !important;
+    }
+    
+    .item-info p {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    .item-price {
+        color: #ff6b35 !important;
     }
     
     .cart-sidebar {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
     }
     
-    /* Availability Widget - Dark Mode */
-    .availability-widget {
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid rgba(255, 107, 53, 0.3);
+    .cart-header h3 {
+        color: white !important;
     }
     
-    /* Game Day Widget - Dark Mode */
-    .game-day-widget {
-        background: rgba(255, 255, 255, 0.05);
-        border: 2px solid rgba(255, 107, 53, 0.3);
+    .cart-count {
+        background: #ff6b35;
+        color: white;
     }
     
-    /* ECU Sidebar - Dark Mode */
-    .ecu-section {
-        background: linear-gradient(135deg, #FFB612 0%, #582C83 100%);
-        border: 2px solid #582C83;
+    .empty-cart p {
+        color: rgba(255, 255, 255, 0.7) !important;
     }
     
-    .ecu-section:first-child {
-        background: linear-gradient(135deg, #ff6b35 0%, #1a1a1a 100%);
-        border: 2px solid #ff6b35;
+    .cart-total {
+        color: white !important;
     }
     
-    .ecu-section:first-child h3 {
-        color: #ff6b35;
+    .total-amount {
+        color: #ff6b35 !important;
     }
     
-    .ecu-section h3 {
-        color: #582C83;
+    /* Catering - Dark Mode */
+    .catering-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+    
+    .catering-section h2 {
+        color: #FFB612 !important;
+    }
+    
+    .catering-card {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .catering-card h3 {
+        color: white !important;
+    }
+    
+    .catering-features li {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* About - Dark Mode */
+    .about-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+    
+    .about-section h2 {
+        color: #FFB612 !important;
+    }
+    
+    .about-content {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .about-content h3 {
+        color: white !important;
+    }
+    
+    .about-content p {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* Footer - Dark Mode */
+    footer {
+        background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    footer h3 {
+        color: #FFB612 !important;
+    }
+    
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    .footer-links a:hover {
+        color: #FFB612 !important;
+    }
+    
+    .social-links a {
+        background: rgba(255, 255, 255, 0.1);
+        color: white !important;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .social-links a:hover {
+        background: #ff6b35 !important;
+        border-color: #ff6b35 !important;
+    }
+    
+    .copyright p {
+        color: rgba(255, 255, 255, 0.6) !important;
     }
     
     /* Navigation - Dark Mode */
@@ -1990,14 +2247,5 @@ footer {
     
     .check-availability:hover {
         background: #FFD700;
-    }
-    
-    /* Text Colors - Dark Mode */
-    .menu-item h4 {
-        color: var(--ecu-gold);
-    }
-    
-    .item-info h4 {
-        color: var(--ecu-gold);
     }
 }

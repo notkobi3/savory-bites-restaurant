@@ -1053,11 +1053,13 @@ section:nth-child(even) {
     overflow-y: auto;
     z-index: 1000;
     transition: all 0.3s ease;
+    transform: translateX(0);
 }
 
 .cart-sidebar.collapsed {
     width: 60px;
     padding: 1rem;
+    transform: translateX(260px); /* Move completely off-screen */
 }
 
 .cart-sidebar.collapsed .cart-header h3,

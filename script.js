@@ -924,6 +924,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const cartCount = document.querySelector('.cart-count');
         const totalAmount = document.querySelector('.total-amount');
         const checkoutBtn = document.querySelector('.checkout-btn');
+        const cartSidebar = document.querySelector('.cart-sidebar');
         
         if (cart.length === 0) {
             cartItems.innerHTML = `
@@ -963,6 +964,15 @@ document.addEventListener('DOMContentLoaded', function() {
             cartCount.textContent = `${itemCount} items`;
             totalAmount.textContent = `$${total.toFixed(2)}`;
             checkoutBtn.disabled = false;
+            
+            // Auto-expand cart when items are added
+            if (cartSidebar && cartSidebar.classList.contains('collapsed')) {
+                cartSidebar.classList.remove('collapsed');
+                const cartToggle = document.getElementById('cart-toggle');
+                if (cartToggle) {
+                    cartToggle.textContent = '✕';
+                }
+            }
             
             // Add remove item functionality
             const removeButtons = document.querySelectorAll('.remove-item');

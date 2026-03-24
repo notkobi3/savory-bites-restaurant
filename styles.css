@@ -1006,6 +1006,32 @@ section:nth-child(even) {
     transform: scale(1.1);
 }
 
+/* Specific styles for quantity buttons */
+.decrease-qty,
+.increase-qty {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary-color);
+    background: white;
+    color: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.decrease-qty:hover,
+.increase-qty:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
 .quantity {
     font-weight: bold;
     font-size: 1.1rem;

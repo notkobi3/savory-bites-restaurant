@@ -11,6 +11,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Cart Toggle Functionality
+    const cartToggle = document.querySelector('.cart-toggle');
+    const cartSidebar = document.querySelector('.cart-sidebar');
+    
+    if (cartToggle && cartSidebar) {
+        cartToggle.addEventListener('click', function() {
+            cartSidebar.classList.toggle('collapsed');
+            
+            // Toggle icon between cart and close
+            if (cartSidebar.classList.contains('collapsed')) {
+                cartToggle.textContent = '🛒';
+            } else {
+                cartToggle.textContent = '✕';
+            }
+        });
+    }
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     

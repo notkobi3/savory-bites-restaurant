@@ -636,8 +636,12 @@ section:nth-child(even) {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="100" fill="rgba(255,255,255,0.02)">�</text></svg>');
-    background-size: 150px 150px;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.03) 2px, transparent 2px),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.03) 2px, transparent 2px),
+        radial-gradient(circle at 40% 60%, rgba(255,255,255,0.02) 3px, transparent 3px),
+        radial-gradient(circle at 60% 40%, rgba(255,255,255,0.02) 3px, transparent 3px);
+    background-size: 150px 150px, 120px 120px, 180px 180px, 100px 100px;
     animation: float 25s infinite linear;
 }
 

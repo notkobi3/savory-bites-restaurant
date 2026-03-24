@@ -1,6 +1,6 @@
-# New Website
+# Savory Bites Restaurant Website
 
-A basic web project created with HTML, CSS, and JavaScript.
+A **professional** restaurant website created with HTML, CSS, and JavaScript featuring advanced interactive components.
 
 ## Project Structure
 

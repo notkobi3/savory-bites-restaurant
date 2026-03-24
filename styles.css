@@ -1102,18 +1102,59 @@ section:nth-child(even) {
 }
 
 .tv-zone {
-    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 1.5rem;
-    border: 2px solid rgba(255, 182, 18, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     transition: var(--transition);
     backdrop-filter: blur(10px);
 }
 
-.tv-zone:hover {
+/* Championship Zone - Purple Theme */
+.tv-zone:nth-child(1) {
+    background: linear-gradient(135deg, #6B46C1 0%, #9333EA 100%);
+    border-color: #9333EA;
+}
+
+.tv-zone:nth-child(1):hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    border-color: rgba(255, 182, 18, 0.6);
+    box-shadow: 0 15px 35px rgba(147, 51, 234, 0.4);
+    border-color: #A855F7;
+}
+
+/* Action Alley - Orange Theme */
+.tv-zone:nth-child(2) {
+    background: linear-gradient(135deg, #EA580C 0%, #F97316 100%);
+    border-color: #F97316;
+}
+
+.tv-zone:nth-child(2):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(249, 115, 22, 0.4);
+    border-color: #FB923C;
+}
+
+/* Social Scene - Teal Theme */
+.tv-zone:nth-child(3) {
+    background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+    border-color: #14B8A6;
+}
+
+.tv-zone:nth-child(3):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20, 184, 166, 0.4);
+    border-color: #2DD4BF;
+}
+
+/* VIP Lounge - Gold Theme */
+.tv-zone:nth-child(4) {
+    background: linear-gradient(135deg, #CA8A04 0%, #EAB308 100%);
+    border-color: #EAB308;
+}
+
+.tv-zone:nth-child(4):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(234, 179, 8, 0.4);
+    border-color: #FACC15;
 }
 
 .zone-header {
@@ -1122,18 +1163,19 @@ section:nth-child(even) {
     align-items: center;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid rgba(255, 182, 18, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .zone-header h3 {
     font-size: 1.4rem;
-    color: #FFB612;
+    color: white;
     margin: 0;
+    font-weight: bold;
 }
 
 .zone-capacity {
-    background: rgba(255, 182, 18, 0.2);
-    color: #FFB612;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -1154,7 +1196,7 @@ section:nth-child(even) {
 }
 
 .tv-size, .sound-system {
-    color: #FFB612;
+    color: white;
     font-weight: bold;
 }
 
@@ -1165,8 +1207,9 @@ section:nth-child(even) {
 
 .zone-amenities li {
     padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 500;
 }
 
 .zone-amenities li:last-child {
@@ -1176,40 +1219,40 @@ section:nth-child(even) {
 .zone-availability {
     text-align: center;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .available-tonight {
-    color: #27ae60;
+    color: #10B981;
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
 }
 
 .limited-seating {
-    color: #f39c12;
+    color: #F59E0B;
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
 }
 
 .plenty-seating {
-    color: #3498db;
+    color: #3B82F6;
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
 }
 
 .vip-status {
-    color: #9b59b6;
+    color: #8B5CF6;
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
 }
 
 .check-availability {
-    background: #FFB612;
-    color: #582C83;
+    background: white;
+    color: #1a1a1a;
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -1220,7 +1263,7 @@ section:nth-child(even) {
 }
 
 .check-availability:hover {
-    background: #FFD700;
+    background: #f3f4f6;
     transform: translateY(-2px);
 }
 
@@ -1228,9 +1271,9 @@ section:nth-child(even) {
     margin-top: 3rem;
     text-align: center;
     padding: 2rem;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    border: 1px solid rgba(255, 182, 18, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .zone-legend h4 {
@@ -1246,8 +1289,8 @@ section:nth-child(even) {
 }
 
 .legend-item {
-    background: rgba(255, 182, 18, 0.2);
-    color: #FFB612;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;

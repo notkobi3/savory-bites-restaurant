@@ -20,6 +20,24 @@
     --transition: all 0.3s ease;
 }
 
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #ffffff;
+        --secondary-color: #ff6b35;
+        --accent-color: #4ecdc4;
+        --ecu-purple: #FFB612;
+        --ecu-gold: #582C83;
+        --text-dark: #ffffff;
+        --text-light: #bdc3c7;
+        --bg-light: #1a1a1a;
+        --bg-dark: #ffffff;
+        --white: #0d0d0d;
+        --shadow: 0 5px 15px rgba(0,0,0,0.3);
+        --shadow-hover: 0 10px 25px rgba(0,0,0,0.4);
+    }
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -1784,5 +1802,120 @@ footer {
     .job-card,
     .benefit-item {
         padding: 1.5rem;
+    }
+}
+
+/* Dark Mode Section Adjustments */
+@media (prefers-color-scheme: dark) {
+    /* Hero Header - Dark Mode */
+    .hero-header {
+        background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #2d2d2d 100%);
+    }
+    
+    /* Logo - Dark Mode */
+    .logo-text {
+        color: white;
+    }
+    
+    /* TV Zones - Dark Mode */
+    .tv-zones-section {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    }
+    
+    .tv-zone {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 182, 18, 0.2);
+    }
+    
+    .tv-zone:hover {
+        border-color: rgba(255, 182, 18, 0.4);
+    }
+    
+    /* Events - Dark Mode */
+    .events-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+    
+    /* Menu - Dark Mode */
+    .menu-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+    
+    .menu-category {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Pre-Order - Dark Mode */
+    .preorder-section {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    }
+    
+    .preorder-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .cart-sidebar {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Availability Widget - Dark Mode */
+    .availability-widget {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 107, 53, 0.3);
+    }
+    
+    /* Game Day Widget - Dark Mode */
+    .game-day-widget {
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 107, 53, 0.3);
+    }
+    
+    /* ECU Sidebar - Dark Mode */
+    .ecu-section {
+        background: linear-gradient(135deg, #FFB612 0%, #582C83 100%);
+        border: 2px solid #582C83;
+    }
+    
+    .ecu-section:first-child {
+        background: linear-gradient(135deg, #ff6b35 0%, #1a1a1a 100%);
+        border: 2px solid #ff6b35;
+    }
+    
+    .ecu-section:first-child h3 {
+        color: #ff6b35;
+    }
+    
+    .ecu-section h3 {
+        color: #582C83;
+    }
+    
+    /* Navigation - Dark Mode */
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Buttons - Dark Mode */
+    .add-to-cart:hover {
+        background: #ff8c42;
+    }
+    
+    .check-availability:hover {
+        background: #FFD700;
+    }
+    
+    /* Text Colors - Dark Mode */
+    .zone-amenities li {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .menu-item h4 {
+        color: var(--ecu-gold);
+    }
+    
+    .item-info h4 {
+        color: var(--ecu-gold);
     }
 }

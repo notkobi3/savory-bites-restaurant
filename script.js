@@ -952,12 +952,16 @@ document.addEventListener('DOMContentLoaded', function() {
             removeButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const itemName = this.dataset.item;
-                    const itemElement = document.querySelector(`.preorder-item h4:contains("${itemName}")`);
                     
-                    if (itemElement) {
-                        const quantityElement = itemElement.closest('.preorder-item').querySelector('.quantity');
-                        quantityElement.textContent = '0';
-                    }
+                    // Find the preorder item with matching name
+                    const preorderItems = document.querySelectorAll('.preorder-item');
+                    preorderItems.forEach(item => {
+                        const itemTitle = item.querySelector('h4').textContent;
+                        if (itemTitle === itemName) {
+                            const quantityElement = item.querySelector('.quantity');
+                            quantityElement.textContent = '0';
+                        }
+                    });
                     
                     removeFromCart(itemName, Infinity);
                     updateCartDisplay();

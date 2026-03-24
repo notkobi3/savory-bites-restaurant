@@ -1057,9 +1057,12 @@ section:nth-child(even) {
 }
 
 .cart-sidebar.collapsed {
-    width: 60px;
-    padding: 1rem;
-    transform: translateX(260px); /* Move completely off-screen */
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: translateX(350px); /* Move completely off-screen + hide width */
+    opacity: 0;
+    pointer-events: none; /* Prevent any interaction when collapsed */
 }
 
 .cart-sidebar.collapsed .cart-header h3,
@@ -1084,6 +1087,7 @@ section:nth-child(even) {
     align-items: center;
     justify-content: center;
     transition: var(--transition);
+    z-index: 1001; /* Ensure toggle stays above cart */
 }
 
 .cart-toggle:hover {

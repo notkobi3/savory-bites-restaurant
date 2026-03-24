@@ -637,4 +637,210 @@ document.addEventListener('DOMContentLoaded', function() {
             }, { once: true });
         });
     });
+    
+    // TV Zone Reservation Functionality
+    const reserveZoneButtons = document.querySelectorAll('.reserve-zone');
+    reserveZoneButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const zoneName = this.closest('.tv-zone').querySelector('h3').textContent;
+            const zoneCapacity = this.closest('.tv-zone').querySelector('.zone-capacity').textContent;
+            const availability = this.closest('.tv-zone').querySelector('.zone-availability span').textContent;
+            
+            const modal = document.createElement('div');
+            modal.className = 'zone-reservation-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>Reserve ${zoneName}</h3>
+                    <div class="zone-info">
+                        <p><strong>Zone:</strong> ${zoneName}</p>
+                        <p><strong>Capacity:</strong> ${zoneCapacity}</p>
+                        <p><strong>Status:</strong> ${availability}</p>
+                    </div>
+                    <form class="zone-reservation-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone" required>
+                        <input type="date" placeholder="Reservation Date" required>
+                        <input type="time" placeholder="Start Time" required>
+                        <input type="number" placeholder="Number of Guests" min="1" max="${zoneCapacity.match(/\d+/)[0]}" required>
+                        <select required>
+                            <option value="">Occasion</option>
+                            <option value="game">Game Watching</option>
+                            <option value="party">Private Party</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <textarea placeholder="Special requests or notes..." rows="3"></textarea>
+                        <button type="submit">Reserve Zone</button>
+                    </form>
+                </div>
+            `;
+            
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2000;
+            `;
+            
+            document.body.appendChild(modal);
+            
+            const closeModal = modal.querySelector('.close-modal');
+            closeModal.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            });
+            
+            const form = modal.querySelector('.zone-reservation-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert(`${zoneName} reservation confirmed! We will contact you to finalize details.`);
+                document.body.removeChild(modal);
+            });
+        });
+    });
+    
+    // Event Calendar Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const eventCards = document.querySelectorAll('.event-card');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            
+            eventCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+    
+    // Event Reservation Functionality
+    const reserveEventButtons = document.querySelectorAll('.reserve-event');
+    reserveEventButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const eventCard = this.closest('.event-card');
+            const eventTitle = eventCard.querySelector('h3').textContent;
+            const eventDate = eventCard.querySelector('.day').textContent + ' ' + eventCard.querySelector('.month').textContent;
+            const eventTime = eventCard.querySelector('.event-time').textContent;
+            const eventDescription = eventCard.querySelector('.event-description').textContent;
+            
+            const modal = document.createElement('div');
+            modal.className = 'event-reservation-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h3>Register for ${eventTitle}</h3>
+                    <div class="event-info">
+                        <p><strong>Event:</strong> ${eventTitle}</p>
+                        <p><strong>Date:</strong> ${eventDate}</p>
+                        <p><strong>Time:</strong> ${eventTime}</p>
+                        <p><strong>Description:</strong> ${eventDescription}</p>
+                    </div>
+                    <form class="event-reservation-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Your Phone" required>
+                        <input type="number" placeholder="Number of People" min="1" max="10" required>
+                        <select required>
+                            <option value="">Group Type</option>
+                            <option value="individual">Individual</option>
+                            <option value="group">Group (2-4)</option>
+                            <option value="team">Team (5+)</option>
+                        </select>
+                        <textarea placeholder="Special accommodations or notes..." rows="3"></textarea>
+                        <button type="submit">Register for Event</button>
+                    </form>
+                </div>
+            `;
+            
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2000;
+            `;
+            
+            document.body.appendChild(modal);
+            
+            const closeModal = modal.querySelector('.close-modal');
+            closeModal.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            });
+            
+            const form = modal.querySelector('.event-reservation-form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert(`You're registered for ${eventTitle}! We'll send confirmation details to your email.`);
+                document.body.removeChild(modal);
+            });
+        });
+    });
+    
+    // Calendar Navigation
+    const monthNavButtons = document.querySelectorAll('.month-nav');
+    const currentMonthSpan = document.querySelector('.current-month');
+    
+    monthNavButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Simple month navigation simulation
+            const months = ['January 2024', 'February 2024', 'March 2024', 'April 2024'];
+            let currentMonthIndex = months.indexOf(currentMonthSpan.textContent);
+            
+            if (this.classList.contains('prev')) {
+                currentMonthIndex = (currentMonthIndex - 1 + months.length) % months.length;
+            } else {
+                currentMonthIndex = (currentMonthIndex + 1) % months.length;
+            }
+            
+            currentMonthSpan.textContent = months[currentMonthIndex];
+            
+            // Simulate loading new events
+            eventCards.forEach(card => {
+                card.style.opacity = '0.5';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 300);
+            });
+        });
+    });
 });

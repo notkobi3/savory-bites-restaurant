@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savory Bites - Restaurant & Catering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 class="logo">🍽️ Savory Bites</h1>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#catering" class="nav-link">Catering</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#careers" class="nav-link">Careers</a></li>
+                </ul>
+                <button class="hamburger">☰</button>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h2>Experience Culinary Excellence</h2>
+            <p>Fresh ingredients, bold flavors, unforgettable experiences</p>
+            <button class="cta-button">Reserve Your Table</button>
+            
+            <!-- Live Availability Widget -->
+            <div class="availability-widget">
+                <h4>🕐 Real-time Table Availability</h4>
+                <div class="availability-grid">
+                    <div class="time-slot" data-time="11:00">
+                        <span class="time">11:00 AM</span>
+                        <div class="availability-bar">
+                            <div class="available" style="width: 80%"></div>
+                        </div>
+                        <span class="status">4 tables available</span>
+                    </div>
+                    <div class="time-slot" data-time="12:30">
+                        <span class="time">12:30 PM</span>
+                        <div class="availability-bar">
+                            <div class="available" style="width: 30%"></div>
+                        </div>
+                        <span class="status">1 table available</span>
+                    </div>
+                    <div class="time-slot" data-time="2:00">
+                        <span class="time">2:00 PM</span>
+                        <div class="availability-bar">
+                            <div class="available" style="width: 60%"></div>
+                        </div>
+                        <span class="status">3 tables available</span>
+                    </div>
+                    <div class="time-slot" data-time="6:00">
+                        <span class="time">6:00 PM</span>
+                        <div class="availability-bar">
+                            <div class="available" style="width: 10%"></div>
+                        </div>
+                        <span class="status">Almost full</span>
+                    </div>
+                    <div class="time-slot" data-time="7:30">
+                        <span class="time">7:30 PM</span>
+                        <div class="availability-bar">
+                            <div class="available" style="width: 5%"></div>
+                        </div>
+                        <span class="status">1 table left</span>
+                    </div>
+                    <div class="time-slot" data-time="9:00">
+                        <span class="time">9:00 PM</span>
+                        <div class="availability-bar">
+                            <div class="available" style="width: 40%"></div>
+                        </div>
+                        <span class="status">2 tables available</span>
+                    </div>
+                </div>
+                <div class="wait-time-estimate">
+                    <span class="wait-label">Current wait time:</span>
+                    <span class="wait-time">15-20 minutes</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section id="home" class="welcome-section">
+            <div class="container">
+                <h2>Welcome to Savory Bites</h2>
+                <p>Where every meal tells a story and every bite is an adventure. We bring together the finest ingredients with creative culinary craftsmanship to deliver an unforgettable dining experience.</p>
+                <div class="features">
+                    <div class="feature-card">
+                        <span class="feature-icon">🌟</span>
+                        <h3>Fresh Daily</h3>
+                        <p>Locally sourced ingredients prepared fresh every day</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">👨‍🍳</span>
+                        <h3>Expert Chefs</h3>
+                        <p>Culinary masters crafting perfection in every dish</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌍</span>
+                        <h3>Global Flavors</h3>
+                        <p>A fusion of international cuisines with local twists</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <h2>Our Menu</h2>
+                <div class="menu-categories">
+                    <div class="menu-category">
+                        <h3>🍕 Appetizers</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <h4>Crispy Calamari</h4>
+                                <p>Fresh squid rings with zesty marinara</p>
+                                <span class="price">$12.99</span>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Bruschetta Trio</h4>
+                                <p>Tomato, mushroom, and olive tapenade on toasted bread</p>
+                                <span class="price">$10.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3>🥩 Main Courses</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <h4>Grilled Salmon</h4>
+                                <p>Pan-seared Atlantic salmon with lemon butter sauce</p>
+                                <span class="price">$24.99</span>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Ribeye Steak</h4>
+                                <p>12oz prime cut with garlic mashed potatoes</p>
+                                <span class="price">$32.99</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3>🍰 Desserts</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <h4>Chocolate Lava Cake</h4>
+                                <p>Warm chocolate center with vanilla ice cream</p>
+                                <span class="price">$8.99</span>
+                            </div>
+                            <div class="menu-item">
+                                <h4>Tiramisu</h4>
+                                <p>Classic Italian coffee-flavored dessert</p>
+                                <span class="price">$7.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="catering" class="catering-section">
+            <div class="container">
+                <h2>Catering Services</h2>
+                <p>Make your event unforgettable with our professional catering services. From intimate gatherings to grand celebrations, we bring the restaurant experience to you.</p>
+                
+                <!-- Smart Catering Calculator -->
+                <div class="catering-calculator">
+                    <h3>🧮 Smart Catering Calculator</h3>
+                    <div class="calculator-grid">
+                        <div class="calc-inputs">
+                            <div class="input-group">
+                                <label for="guest-count">Number of Guests</label>
+                                <input type="number" id="guest-count" min="10" max="500" value="50">
+                                <span class="guest-indicator">Guests: <span id="guest-display">50</span></span>
+                            </div>
+                            <div class="input-group">
+                                <label for="event-type">Event Type</label>
+                                <select id="event-type">
+                                    <option value="corporate">Corporate Event</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="private">Private Party</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="budget-range">Budget Range</label>
+                                <select id="budget-range">
+                                    <option value="economy">Economy ($15-25/person)</option>
+                                    <option value="standard">Standard ($25-40/person)</option>
+                                    <option value="premium">Premium ($40-60/person)</option>
+                                    <option value="luxury">Luxury ($60+/person)</option>
+                                </select>
+                            </div>
+                            <div class="dietary-options">
+                                <label>Dietary Requirements:</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" id="vegetarian"> Vegetarian</label>
+                                    <label><input type="checkbox" id="vegan"> Vegan</label>
+                                    <label><input type="checkbox" id="gluten-free"> Gluten-Free</label>
+                                    <label><input type="checkbox" id="halal"> Halal</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc-results">
+                            <div class="price-estimate">
+                                <h4>Estimated Cost</h4>
+                                <div class="price-display">
+                                    <span class="currency">$</span>
+                                    <span id="total-price">1,250</span>
+                                    <span class="per-person">($25/person)</span>
+                                </div>
+                            </div>
+                            <div class="menu-suggestions">
+                                <h4>Recommended Menu</h4>
+                                <div id="menu-suggestions">
+                                    <div class="menu-suggestion">
+                                        <span class="dish-name">Mixed Appetizer Platter</span>
+                                        <span class="portion-size">3 pieces/guest</span>
+                                    </div>
+                                    <div class="menu-suggestion">
+                                        <span class="dish-name">Grilled Chicken & Salmon</span>
+                                        <span class="portion-size">8oz protein/guest</span>
+                                    </div>
+                                    <div class="menu-suggestion">
+                                        <span class="dish-name">Seasonal Vegetables</span>
+                                        <span class="portion-size">2 sides/guest</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="budget-tips">
+                                <h4>Budget Optimization Tips</h4>
+                                <ul id="budget-tips">
+                                    <li>💡 Upgrade to premium for 20% more food variety</li>
+                                    <li>🌱 Add vegetarian options to reduce costs by 15%</li>
+                                </ul>
+                            </div>
+                            <button class="get-detailed-quote">Get Detailed Quote</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="catering-options">
+                    <div class="catering-card">
+                        <h3>🎉 Corporate Events</h3>
+                        <p>Professional catering for business meetings, conferences, and company celebrations</p>
+                        <ul>
+                            <li>Breakfast & lunch packages</li>
+                            <li>Buffet style service</li>
+                            <li>Dietary accommodations</li>
+                        </ul>
+                    </div>
+                    <div class="catering-card">
+                        <h3>💒 Wedding Catering</h3>
+                        <p>Elegant dining experiences for your special day</p>
+                        <ul>
+                            <li>Custom menu creation</li>
+                            <li>Full-service staff</li>
+                            <li>Bar service available</li>
+                        </ul>
+                    </div>
+                    <div class="catering-card">
+                        <h3>🎂 Private Parties</h3>
+                        <p>Intimate gatherings and celebrations</p>
+                        <ul>
+                            <li>Family-style dining</li>
+                            <li>Interactive food stations</li>
+                            <li>Dessert bars</li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="quote-button">Get Catering Quote</button>
+            </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Savory Bites</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Founded in 2020, Savory Bites began as a small family-owned restaurant with a big dream: to create a dining experience that brings people together through exceptional food and warm hospitality.</p>
+                        <p>Our head chef, Maria Rodriguez, brings over 20 years of international culinary experience, having trained in Italy, France, and Japan before returning to create our unique fusion menu.</p>
+                        <p>We believe in sustainable practices, supporting local farmers, and creating a workplace where our team can thrive and grow.</p>
+                        <div class="values">
+                            <div class="value">
+                                <h4>🌱 Sustainability</h4>
+                                <p>Locally sourced, eco-friendly practices</p>
+                            </div>
+                            <div class="value">
+                                <h4>🤝 Community</h4>
+                                <p>Supporting local producers and charities</p>
+                            </div>
+                            <div class="value">
+                                <h4>⭐ Excellence</h4>
+                                <p>Committed to quality in every dish</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">📸 Restaurant Interior</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="careers" class="careers-section">
+            <div class="container">
+                <h2>Employment Opportunities</h2>
+                <p>Join our passionate team and be part of something special. We're always looking for talented individuals who share our love for food and hospitality.</p>
+                <div class="job-openings">
+                    <div class="job-card">
+                        <h3>👨‍🍳 Line Cook</h3>
+                        <p>Full-time | Kitchen Team</p>
+                        <p>We're seeking experienced line cooks to join our kitchen team. Must have at least 2 years of restaurant experience and passion for quality food.</p>
+                        <div class="job-details">
+                            <span>💰 Competitive salary</span>
+                            <span>📅 Flexible scheduling</span>
+                            <span>🎓 Training provided</span>
+                        </div>
+                        <button class="apply-button">Apply Now</button>
+                    </div>
+                    <div class="job-card">
+                        <h3>🥂 Server</h3>
+                        <p>Part-time/Full-time | Front of House</p>
+                        <p>Looking for friendly, attentive servers to provide exceptional dining experiences. Previous serving experience preferred.</p>
+                        <div class="job-details">
+                            <span>💰 Tips + base pay</span>
+                            <span>🌟 Great tips potential</span>
+                            <span>👔 Uniform provided</span>
+                        </div>
+                        <button class="apply-button">Apply Now</button>
+                    </div>
+                    <div class="job-card">
+                        <h3>🧹 Dishwasher</h3>
+                        <p>Part-time | Kitchen Support</p>
+                        <p>Join our kitchen team in maintaining cleanliness and efficiency. No experience necessary - we'll train you!</p>
+                        <div class="job-details">
+                            <span>💰 $15/hour starting</span>
+                            <span>⏰ Evening shifts</span>
+                            <span>📈 Growth opportunities</span>
+                        </div>
+                        <button class="apply-button">Apply Now</button>
+                    </div>
+                </div>
+                <div class="benefits">
+                    <h3>Why Work With Us?</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🏥</span>
+                            <h4>Health Insurance</h4>
+                            <p>Comprehensive medical, dental, and vision coverage</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">📚</span>
+                            <h4>Training & Development</h4>
+                            <p>Ongoing culinary education and skill development</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🌟</span>
+                            <h4>Career Growth</h4>
+                            <p>Opportunities for advancement within the company</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎉</span>
+                            <h4>Team Events</h4>
+                            <p>Regular team building and celebration events</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🍽️ Savory Bites</h3>
+                    <p>Experience culinary excellence at its finest</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Food Street, Culinary City</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>📧 info@savorybites.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Mon-Thu: 11am-10pm</p>
+                    <p>Fri-Sat: 11am-11pm</p>
+                    <p>Sunday: 10am-9pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Savory Bites. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

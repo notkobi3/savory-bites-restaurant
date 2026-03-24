@@ -71,6 +71,13 @@ body {
     text-decoration: none;
 }
 
+/* Emoji Fallback - Ensure text displays if emoji fails */
+.logo::before {
+    content: "⚡";
+    font-size: 1.2em;
+    margin-right: 0.2em;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;

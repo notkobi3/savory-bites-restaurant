@@ -324,14 +324,21 @@ section:nth-child(even) {
 
 /* Menu Section */
 .menu-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 4rem 0;
 }
 
 .menu-section h2 {
     text-align: center;
     font-size: 2.5rem;
+    color: #582C83;
+    margin-bottom: 1rem;
+}
+
+.menu-section p {
+    text-align: center;
+    color: var(--text-light);
     margin-bottom: 3rem;
-    color: var(--primary-color);
 }
 
 .menu-categories {
@@ -1057,85 +1064,85 @@ section:nth-child(even) {
 
 /* TV Zones Section */
 .tv-zones-section {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background: linear-gradient(135deg, #4a2366 0%, #582C83 100%);
     color: white;
+    padding: 4rem 0;
 }
 
 .tv-zones-section h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: white;
-}
-
-.tv-zones-section > .container > p {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: #FFB612;
 }
 
 .tv-zones-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 
 .tv-zone {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1.5rem;
+    border: 2px solid rgba(255, 182, 18, 0.3);
+    transition: var(--transition);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
 }
 
 .tv-zone:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border-color: rgba(255, 182, 18, 0.6);
 }
 
 .zone-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid rgba(255, 182, 18, 0.3);
 }
 
 .zone-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    color: #FFB612;
     margin: 0;
-    color: white;
 }
 
 .zone-capacity {
-    background: var(--accent-color);
-    color: white;
+    background: rgba(255, 182, 18, 0.2);
+    color: #FFB612;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.zone-features {
+    margin-bottom: 1.5rem;
 }
 
 .tv-info {
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
     margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 
 .tv-size, .sound-system {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-size: 0.9rem;
+    color: #FFB612;
+    font-weight: bold;
 }
 
 .zone-amenities {
     list-style: none;
     padding: 0;
-    margin-bottom: 1.5rem;
 }
 
 .zone-amenities li {
@@ -1149,85 +1156,103 @@ section:nth-child(even) {
 }
 
 .zone-availability {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .available-tonight {
     color: #27ae60;
     font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .limited-seating {
     color: #f39c12;
     font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .plenty-seating {
     color: #3498db;
     font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-.members-only {
-    color: #e74c3c;
+.vip-status {
+    color: #9b59b6;
     font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
-.reserve-zone {
-    background: var(--accent-color);
-    color: white;
+.check-availability {
+    background: #FFB612;
+    color: #582C83;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-weight: bold;
+    transition: var(--transition);
+    margin-top: 0.5rem;
 }
 
-.reserve-zone:hover {
-    background: #e67e22;
+.check-availability:hover {
+    background: #FFD700;
     transform: translateY(-2px);
 }
 
 .zone-legend {
+    margin-top: 3rem;
     text-align: center;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
+    border: 1px solid rgba(255, 182, 18, 0.3);
 }
 
 .zone-legend h4 {
+    color: #FFB612;
     margin-bottom: 1rem;
-    color: white;
 }
 
 .legend-items {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .legend-item {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 182, 18, 0.2);
+    color: #FFB612;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
 }
 
 /* Events Section */
 .events-section {
-    background: var(--bg-light);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
 }
 
 .events-section h2 {
     text-align: center;
     font-size: 2.5rem;
+    color: #582C83;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+}
+
+.events-section p {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
 }
 
 .events-section > .container > p {

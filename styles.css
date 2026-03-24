@@ -2115,7 +2115,7 @@ footer {
         background: rgba(255, 182, 18, 0.2) !important;
     }
     
-    /* Events - Dark Mode */
+    /* Events - Dark Mode - CRITICAL FIX */
     .events-section {
         background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     }
@@ -2148,6 +2148,20 @@ footer {
     }
     
     .reservations-status {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* Event Date - Dark Mode - CRITICAL FIX */
+    .event-date {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .event-date .day {
+        color: white !important;
+    }
+    
+    .event-date .month {
         color: rgba(255, 255, 255, 0.9) !important;
     }
     

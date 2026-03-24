@@ -89,12 +89,14 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     padding: 0.5rem 1rem;
-    border-radius: 25px;
+    border-radius: 8px;
+    display: inline-block;
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .hamburger {
